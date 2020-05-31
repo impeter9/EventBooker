@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "Add your MongoDB username",
+        "MONGO_PASSWORD": "Add your MongoDB password",
+        "MONGO_DB": "events-react-dev"
+    }
+}
