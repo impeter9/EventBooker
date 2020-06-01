@@ -7,7 +7,7 @@ const events = eventIds => {
     // find all events with one of the Ids passed in {_id: {$in: eventIds}}
     return Event.find({_id: {$in: eventIds}}).then(events => {
         return events.map(event => {
-            return { ...event._doc, creator: user.bind(this, event.creator) };
+            return { ...event._doc, date: new Date(event._doc.date).toISOString(), creator: user.bind(this, event.creator) };
         });
     })
     .catch(err => {
@@ -33,7 +33,7 @@ module.exports = {
             return events.map(event => {
                 // return { ...event._doc, _id: event._doc._id.toString() };
                 // return { ...event._doc, _id: event.id };
-                return { ...event._doc, creator: user.bind(this, event._doc.creator)};
+                return { ...event._doc, date: new Date(event._doc.date).toISOString(), creator: user.bind(this, event._doc.creator)};
             });
         }).catch(err => {
             throw err;
@@ -52,7 +52,7 @@ module.exports = {
             // filter metadata from mongo with spread operator
             // bind creates/return the function but avoid to be called before passing down (avoid infinite loop)
             // graphql will only execute the function when user asks for that field ex) creator in this case
-            createdEvent = { ...result._doc, creator: user.bind(this, result._doc.creator) }
+            createdEvent = { ...result._doc, date: new Date(event._doc.date).toISOString(), creator: user.bind(this, result._doc.creator) }
             return User.findById('5ed32e98f09e5218cb583c18');
         }).then(user => {
             // add transaction for atomicity
