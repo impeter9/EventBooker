@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Modal from '../components/Modal/Modal';
 import Backdrop from '../components/Backdrop/Backdrop';
+import EventList from '../components/Events/EventList/EventList';
 import AuthContext from '../context/auth-context';
 
 import './Events.css';
@@ -40,9 +41,6 @@ class EventsPage extends Component {
         if (title.trim().length === 0 || price <= 0 || date.trim().length === 0 || desc.trim().length === 0) {
             return;
         }
-
-        const event = {title, price, date, desc};
-        console.log(event);
 
         const requestBody = {
             query: `
@@ -106,8 +104,6 @@ class EventsPage extends Component {
             `
         };
 
-        const token = this.context.token;
-
         fetch('http://localhost:8000/graphql', {
             method: 'POST',
             body: JSON.stringify(requestBody),
@@ -128,11 +124,6 @@ class EventsPage extends Component {
     }
 
     render() {
-        const eventList = this.state.events.map(event => {
-            return (
-                <li key={event._id} className="events__list-item">{event.title}</li>
-            )
-        })
         return (
             <React.Fragment>
                 {this.state.creating && <Backdrop />}
@@ -160,9 +151,7 @@ class EventsPage extends Component {
                     <p>Share your own Events!</p>
                     <button className="btn" onClick={this.startCreateEventHandler}>Create Event</button>
                 </div>)}
-                <ul className="events__list">
-                    {eventList}
-                </ul>
+                <EventList events={this.state.events} />
             </React.Fragment>
         );
     }
