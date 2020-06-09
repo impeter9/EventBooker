@@ -1,7 +1,7 @@
 .events__list-item {
     margin: 1rem 0;
     padding: 1rem;
-    border: 1px solid blue;
+    border: 1px solid rgb(0, 115, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,7 +10,7 @@
 .events__list-item h1 {
     margin: 0;
     font-size: 1.5rem;
-    color: blue;
+    color: rgb(0, 115, 255);
 }
 
 .events__list-item h2 {
