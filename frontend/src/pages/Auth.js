@@ -66,6 +66,7 @@ class AuthPage extends Component {
             if (res.status !== 200 && res.status !== 201) {
                 throw new Error('Failed!');
             }
+            console.log(res);
             return res.json();
         }).then(resData => {
             if (resData.data.login.token) {
