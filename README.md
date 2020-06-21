@@ -25,3 +25,7 @@ npm run frontend
 Navigate to link in a web browser.
 
 > http://localhost:3000
+
+## Credit
+
+Academind - https://academind.com/
