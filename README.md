@@ -14,11 +14,13 @@ Event booking application.
 
 Clone repo to local machine.
 
+Add your MongoDB information to nodemonExample.json and change its name to nodemon.json
+
 From within the root directory of repo run the following commands:
 
 ```sh
 npm install
-npm run start
+npm run server
 npm run frontend
 ```
 
