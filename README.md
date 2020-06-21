@@ -8,7 +8,7 @@ Event booking application.
 
 ## Screen Capture
 
-![Imgur Image](./EventBooker.gif)
+![Imgur Image](./EventBookerDemo.gif)
 
 ## Setup to run locally
 
