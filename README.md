@@ -2,9 +2,9 @@
 
 Event booking application.
 
-## Project Flowchart
+## Design of GraphQL API
 
-![flowchart](https://eventbooker.s3-us-west-1.amazonaws.com/eventbooker-flowchart.png)
+![flowchart](https://eventbooker.s3-us-west-1.amazonaws.com/eventbooker_flowchart.png)
 
 ## Screen Capture
 
